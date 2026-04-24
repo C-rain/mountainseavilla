@@ -931,6 +931,10 @@ button {
   background: linear-gradient(135deg, #1877f2, #145dbb);
 }
 
+.floating-line {
+  background: linear-gradient(135deg, #06c755, #00a843);
+}
+
 .floating-map {
   background: linear-gradient(135deg, var(--brand), var(--brand-soft));
 }
