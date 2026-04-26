@@ -1,7 +1,7 @@
 :root {
-  --bg: #eef4ef;
-  --bg-soft: #e2dccb;
-  --panel: rgba(255, 250, 243, 0.84);
+  --bg: #071c28;
+  --bg-soft: #0e3440;
+  --panel: rgba(255, 250, 243, 0.9);
   --panel-strong: rgba(11, 51, 62, 0.92);
   --text: #16313b;
   --text-soft: rgba(22, 49, 59, 0.74);
@@ -32,10 +32,10 @@ body {
   font-family: "Noto Sans TC", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 10% 18%, rgba(38, 122, 135, 0.22), transparent 26%),
-    radial-gradient(circle at 92% 8%, rgba(201, 153, 95, 0.18), transparent 24%),
-    radial-gradient(circle at 76% 82%, rgba(12, 59, 70, 0.14), transparent 28%),
-    linear-gradient(150deg, #edf6f1 0%, #fbf4e7 48%, var(--bg-soft) 100%);
+    radial-gradient(circle at 18% 16%, rgba(28, 195, 226, 0.18), transparent 22%),
+    radial-gradient(circle at 82% 22%, rgba(30, 128, 156, 0.2), transparent 26%),
+    radial-gradient(circle at 70% 82%, rgba(92, 220, 227, 0.12), transparent 28%),
+    linear-gradient(160deg, #061722 0%, #0b2a38 42%, #142f38 72%, #071c28 100%);
 }
 
 body::before {
@@ -43,12 +43,12 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.28;
+  opacity: 0.22;
   background-image:
-    linear-gradient(rgba(12, 59, 70, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(12, 59, 70, 0.08) 1px, transparent 1px),
-    repeating-linear-gradient(115deg, transparent 0 26px, rgba(255, 248, 240, 0.35) 27px 28px);
-  background-size: 48px 48px;
+    linear-gradient(rgba(132, 229, 232, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(132, 229, 232, 0.1) 1px, transparent 1px),
+    repeating-linear-gradient(118deg, transparent 0 30px, rgba(255, 248, 240, 0.1) 31px 32px);
+  background-size: 56px 56px;
   mask-image: radial-gradient(circle at center, black 35%, transparent 90%);
 }
 
@@ -57,21 +57,23 @@ body::after {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.18;
+  opacity: 0.34;
   background:
+    radial-gradient(circle at 18% 72%, rgba(57, 227, 255, 0.2), transparent 13%),
+    radial-gradient(circle at 76% 28%, rgba(95, 246, 227, 0.16), transparent 15%),
     repeating-radial-gradient(
       ellipse at 18% 24%,
-      transparent 0 38px,
-      rgba(12, 59, 70, 0.26) 39px 40px,
-      transparent 41px 78px
+      transparent 0 42px,
+      rgba(113, 231, 239, 0.22) 43px 44px,
+      transparent 45px 84px
     ),
     repeating-radial-gradient(
       ellipse at 84% 76%,
       transparent 0 46px,
-      rgba(201, 153, 95, 0.26) 47px 48px,
+      rgba(46, 191, 215, 0.2) 47px 48px,
       transparent 49px 88px
     );
-  mask-image: linear-gradient(115deg, black 0%, transparent 72%);
+  mask-image: linear-gradient(115deg, black 0%, transparent 76%);
 }
 
 img {
