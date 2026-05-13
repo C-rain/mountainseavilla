@@ -26,6 +26,38 @@ const nightInput = document.getElementById("nightInput");
 const guestInput = document.getElementById("guestInput");
 const estimateOutput = document.getElementById("estimateOutput");
 
+const trackEvent = (eventName, params = {}) => {
+  if (typeof window.gtag !== "function") {
+    return;
+  }
+
+  window.gtag("event", eventName, {
+    page_location: window.location.href,
+    page_title: document.title,
+    ...params
+  });
+};
+
+const getContactMethod = (href) => {
+  if (href.startsWith("tel:")) {
+    return "phone";
+  }
+
+  if (href.includes("line.me")) {
+    return "line";
+  }
+
+  if (href.includes("facebook.com")) {
+    return "facebook";
+  }
+
+  if (href.includes("google.com/maps") || href.includes("share.google")) {
+    return "map";
+  }
+
+  return "other";
+};
+
 const ensureFloatingActions = () => {
   if (document.querySelector(".floating-actions")) {
     return;
@@ -150,6 +182,35 @@ if (heroDots.length > 0) {
   startHeroTimer();
 }
 
+const normalizeNavPath = (value) => {
+  if (!value) {
+    return "/";
+  }
+
+  return value.replace(/\/index\.html$/, "/") || "/";
+};
+
+const updateNavState = (activeSectionId = "") => {
+  const currentPath = normalizeNavPath(window.location.pathname);
+
+  navLinks.forEach((link) => {
+    const href = link.getAttribute("href") ?? "";
+    let isActive = false;
+
+    if (activeSectionId && (href === `#${activeSectionId}` || href === `/#${activeSectionId}`)) {
+      isActive = true;
+    } else if (href.startsWith("/")) {
+      const [rawPath] = href.split("#");
+      const navPath = normalizeNavPath(rawPath || "/");
+      isActive = currentPath === navPath;
+    }
+
+    link.classList.toggle("is-active", isActive);
+  });
+};
+
+updateNavState();
+
 if (menuToggle && siteNav) {
   menuToggle.addEventListener("click", () => {
     const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
@@ -190,6 +251,10 @@ const openLightbox = (index) => {
   lightbox.classList.add("is-open");
   lightbox.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
+  trackEvent("gallery_open", {
+    gallery_index: index + 1,
+    image_caption: item.dataset.caption ?? item.querySelector("img")?.alt ?? ""
+  });
   lightboxClose?.focus();
 };
 
@@ -236,6 +301,10 @@ filterButtons.forEach((button) => {
       const tags = card.getAttribute("data-room") ?? "";
       card.classList.toggle("is-hidden", filter !== "all" && !tags.includes(filter));
     });
+
+    trackEvent("room_filter", {
+      filter_type: filter
+    });
   });
 });
 
@@ -259,11 +328,50 @@ const updateEstimate = () => {
 };
 
 [roomSelect, nightInput, guestInput].forEach((input) => {
-  input?.addEventListener("input", updateEstimate);
+  input?.addEventListener("input", () => {
+    updateEstimate();
+    trackEvent("room_estimate_update", {
+      room_price: Number(roomSelect?.value ?? 0),
+      nights: Number(nightInput?.value ?? 0),
+      guests: Number(guestInput?.value ?? 0)
+    });
+  });
   input?.addEventListener("change", updateEstimate);
 });
 
 updateEstimate();
+
+document.querySelectorAll("a[href]").forEach((link) => {
+  const href = link.getAttribute("href") ?? "";
+  const contactMethod = getContactMethod(href);
+  const isBookingLink = href.includes("booking.html") || href.includes("#booking");
+
+  if (contactMethod !== "other") {
+    link.addEventListener("click", () => {
+      trackEvent("contact_click", {
+        contact_method: contactMethod,
+        link_url: link.href,
+        link_text: link.textContent?.trim().slice(0, 80) ?? ""
+      });
+
+      if (contactMethod === "phone" || contactMethod === "line") {
+        trackEvent("generate_lead", {
+          method: contactMethod,
+          link_url: link.href
+        });
+      }
+    });
+  }
+
+  if (isBookingLink) {
+    link.addEventListener("click", () => {
+      trackEvent("booking_intent", {
+        link_url: link.href,
+        link_text: link.textContent?.trim().slice(0, 80) ?? ""
+      });
+    });
+  }
+});
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
@@ -314,9 +422,7 @@ if ("IntersectionObserver" in window) {
           return;
         }
 
-        navLinks.forEach((link) => {
-          link.classList.toggle("is-active", link.getAttribute("href") === `#${targetId}`);
-        });
+        updateNavState(targetId);
       });
     },
     {
@@ -325,7 +431,7 @@ if ("IntersectionObserver" in window) {
     }
   );
 
-  sections.forEach((section) => navObserver.observe(section));
+      sections.forEach((section) => navObserver.observe(section));
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }

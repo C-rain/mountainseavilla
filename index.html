@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>西莒山海一家會館 | 馬祖西莒海景民宿</title>
+    <title>西莒山海一家會館 | 馬祖西莒青帆村海景民宿</title>
     <meta
       name="description"
       content="西莒山海一家會館位於連江縣莒光鄉青帆村高點，提供海景雙人、山景雙人、四人房與背包客住宿。從青帆港、坤坵沙灘到藍眼淚季節，住進西莒最有故事的山海視野。"
@@ -55,11 +55,62 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "@id": "https://mountainseavilla.com/#website",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://mountainseavilla.com/#organization",
+            "name": "西莒山海一家會館",
+            "alternateName": ["山海一家會館", "Mountain Sea Villa"],
+            "url": "https://mountainseavilla.com/",
+            "logo": "https://mountainseavilla.com/assets/images/logo.jpg",
+            "telephone": "+886-836-88295",
+            "email": "may89181@yahoo.com.tw",
+            "sameAs": [
+              "https://share.google/b4YWjxrqz31nvUyzh",
+              "https://www.facebook.com/%E8%A5%BF%E8%8E%92%E5%B1%B1%E6%B5%B7%E4%B8%80%E5%AE%B6%E6%9C%83%E9%A4%A8-1983491898558309/"
+            ],
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "telephone": "+886-836-88295",
+                "availableLanguage": ["zh-Hant", "zh-TW"]
+              }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://mountainseavilla.com/#website",
+            "url": "https://mountainseavilla.com/",
+            "name": "西莒山海一家會館",
+            "alternateName": ["山海一家會館", "Mountain Sea Villa"],
+            "publisher": {
+              "@id": "https://mountainseavilla.com/#organization"
+            },
+            "inLanguage": "zh-Hant-TW"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://mountainseavilla.com/#webpage",
         "url": "https://mountainseavilla.com/",
-        "name": "西莒山海一家會館",
-        "alternateName": ["山海一家會館", "Mountain Sea Villa"]
+        "name": "西莒山海一家會館 | 馬祖西莒海景民宿",
+        "description": "西莒山海一家會館位於連江縣莒光鄉青帆村高點，提供海景雙人、山景雙人、四人房與背包客住宿。",
+        "isPartOf": {
+          "@id": "https://mountainseavilla.com/#website"
+        },
+        "about": {
+          "@id": "https://mountainseavilla.com/#lodging"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://mountainseavilla.com/assets/images/banner-1.jpg"
+        },
+        "inLanguage": "zh-Hant-TW"
       }
     </script>
     <script type="application/ld+json">
@@ -77,7 +128,6 @@
         "checkinTime": "15:00",
         "checkoutTime": "11:00",
         "numberOfRooms": "13",
-        "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
           "addressCountry": "TW",
@@ -97,9 +147,68 @@
           "https://mountainseavilla.com/assets/images/room-family-new.jpg"
         ],
         "areaServed": "馬祖西莒",
+        "parentOrganization": {
+          "@id": "https://mountainseavilla.com/#organization"
+        },
         "sameAs": [
           "https://share.google/b4YWjxrqz31nvUyzh",
           "https://www.facebook.com/%E8%A5%BF%E8%8E%92%E5%B1%B1%E6%B5%B7%E4%B8%80%E5%AE%B6%E6%9C%83%E9%A4%A8-1983491898558309/"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "西莒山海一家會館是什麼？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "西莒山海一家會館是位於連江縣莒光鄉青帆村高點的民宿，提供房型介紹、訂房聯絡、交通接送洽詢與西莒周邊旅遊資訊。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "山海一家會館適合哪些旅客？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "適合雙人慢旅、家庭住宿、背包客跳島，以及想把青帆港、方塊海、藍眼淚行程排進同一趟西莒旅行的旅客。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "山海一家會館有哪些房型？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "目前網站整理的房型包含海景雙人房、山景雙人房、山景四人房與背包客房，實際房況與價格仍需電話確認。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "從南竿怎麼到西莒山海一家會館？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "多數旅客會先到南竿福澳港，再搭交通船前往西莒青帆港，抵達後可向山海一家會館洽詢碼頭接送。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "山海一家會館怎麼訂房？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "建議先來電或透過 Line 確認日期、房型與人數，再依館方提供的匯款資訊完成訂房。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "入住山海一家會館可以安排哪些西莒行程？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "常見安排包含青帆港散步、菜浦澳海蝕地景、坤坵沙灘、方塊海與藍眼淚夜間路線，仍需依季節與天候調整。"
+            }
+          }
         ]
       }
     </script>
@@ -107,7 +216,7 @@
   <body>
     <div class="page-shell">
       <header class="site-header">
-        <a class="brand" href="./index.html" aria-label="山海一家會館首頁">
+        <a class="brand" href="/" aria-label="山海一家會館首頁">
           <img
             class="brand-logo"
             src="./assets/images/logo.jpg"
@@ -120,13 +229,12 @@
         </button>
 
         <nav class="site-nav" id="site-nav" aria-label="主選單">
-          <a href="./index.html#about">關於會館</a>
-          <a href="./rooms.html">房型資訊</a>
-          <a href="./booking.html">訂房方式</a>
-          <a href="./access.html">交通位置</a>
-          <a href="./xiju-travel.html">西莒旅行</a>
-          <a href="./faq.html">常見問題</a>
-          <a href="./gallery.html">山海影像</a>
+          <a href="/#about">關於會館</a>
+          <a href="/rooms.html">房型資訊</a>
+          <a href="/booking.html">訂房方式</a>
+          <a href="/access.html">交通位置</a>
+          <a href="/travel-guides/">旅行指南</a>
+          <a href="/faq.html">常見問題</a>
         </nav>
       </header>
 
@@ -186,6 +294,99 @@
           <div class="trust-card">
             <strong>4-9 月</strong>
             <span>藍眼淚與夜色海岸季節</span>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="content-band" data-reveal>
+            <p class="eyebrow">Quick Definition</p>
+            <h2>西莒山海一家會館是什麼？</h2>
+            <p>
+              西莒山海一家會館是一間位於連江縣莒光鄉青帆村高點的民宿，主要提供西莒住宿、
+              房型選擇、訂房聯絡、交通接送洽詢與周邊旅遊資訊，適合雙人旅行、家庭住宿、
+              背包客跳島與想把青帆港、方塊海、藍眼淚排進同一趟旅程的人。
+            </p>
+            <p>
+              如果你想先快速判斷西莒山海一家會館適不適合自己，最重要的三件事是：
+              房型是否符合同行人數、是否要安排西莒夜間行程、以及是否需要青帆港接送協助。
+            </p>
+          </div>
+
+          <div class="two-column-grid">
+            <article class="detail-card" data-reveal>
+              <h2>這頁在說什麼</h2>
+              <ul class="meta-list">
+                <li>介紹西莒山海一家會館的品牌定位與住宿特色。</li>
+                <li>整理海景、山景、四人與背包客房型方向。</li>
+                <li>提供交通、地圖、訂房與周邊旅行入口。</li>
+                <li>協助旅客先判斷西莒住宿與行程是否適合自己。</li>
+              </ul>
+            </article>
+            <article class="detail-card" data-reveal>
+              <h2>適合誰閱讀</h2>
+              <ul class="meta-list">
+                <li>想找西莒住宿、青帆村民宿或馬祖跳島住宿的人。</li>
+                <li>想先看房型、交通與訂房方式，再決定是否聯絡館方的人。</li>
+                <li>打算安排藍眼淚、方塊海或青帆港慢旅行程的人。</li>
+                <li>下一步建議直接查看房型、交通頁或來電確認房況。</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-heading section-heading-compact" data-reveal>
+            <p class="eyebrow">Site Map</p>
+            <h2>先從主要入口進來，再往下看房型、旅行與比較頁。</h2>
+            <p>首頁負責總覽，房型資訊、訂房方式、交通位置則承接主要商業需求；旅行指南、房型深度頁與比較頁則負責長尾搜尋與延伸閱讀。</p>
+          </div>
+
+          <div class="seo-grid">
+            <article class="detail-card" data-reveal>
+              <h3>住宿入口頁</h3>
+              <p>先看全部房型，再依海景、山景、家庭或背包客情境深入比較。</p>
+              <div class="link-stack">
+                <a class="text-link" href="/rooms.html">查看房型總覽</a>
+                <a class="text-link" href="/stays/">查看房型深度頁</a>
+              </div>
+            </article>
+            <article class="detail-card" data-reveal>
+              <h3>訂房與轉換頁</h3>
+              <p>已經知道日期或房型方向時，直接到訂房頁確認流程、匯款與接送安排。</p>
+              <div class="link-stack">
+                <a class="text-link" href="/booking.html">查看訂房方式</a>
+              </div>
+            </article>
+            <article class="detail-card" data-reveal>
+              <h3>交通與抵達頁</h3>
+              <p>第一次到西莒時，先看南竿到青帆港的交通，再決定是否需要接送安排。</p>
+              <div class="link-stack">
+                <a class="text-link" href="/access.html">查看交通位置</a>
+                <a class="text-link" href="/travel-guides/nangan-to-xiju-transport/">查看交通指南</a>
+              </div>
+            </article>
+            <article class="detail-card" data-reveal>
+              <h3>西莒旅行主題頁</h3>
+              <p>如果你是先查藍眼淚、方塊海或兩天一夜行程，旅行頁與指南頁會更適合先讀。</p>
+              <div class="link-stack">
+                <a class="text-link" href="/xiju-travel.html">查看西莒旅行總覽</a>
+                <a class="text-link" href="/travel-guides/">查看旅行指南</a>
+              </div>
+            </article>
+            <article class="detail-card" data-reveal>
+              <h3>住宿比較頁</h3>
+              <p>還在猶豫海景房和山景房差異時，先看比較頁能更快做選擇。</p>
+              <div class="link-stack">
+                <a class="text-link" href="/compare/">查看住宿比較頁</a>
+              </div>
+            </article>
+            <article class="detail-card" data-reveal>
+              <h3>FAQ 支援頁</h3>
+              <p>想快速找方塊海、藍眼淚、接送、租機車或導覽問題，可直接從 FAQ 進入。</p>
+              <div class="link-stack">
+                <a class="text-link" href="/faq.html">查看常見問題</a>
+              </div>
+            </article>
           </div>
         </section>
 
@@ -305,6 +506,14 @@
             <p>以下房價依館方公開資訊整理，實際房況與價格請以電話確認為準。</p>
           </div>
 
+          <div class="content-band" data-reveal>
+            <h3>西莒住宿怎麼選比較快？</h3>
+            <p>
+              先看同行人數，再看是否想要海景或壓低預算，通常就能先排除不適合的房型。
+              想看港景與慢旅氛圍的人，多半會先看海景雙人房；重視實用與預算的人，則更適合山景房或背包客房。
+            </p>
+          </div>
+
           <div class="room-filters" data-reveal aria-label="房型篩選">
             <button class="filter-button is-active" type="button" data-filter="all">全部房型</button>
             <button class="filter-button" type="button" data-filter="sea">海景</button>
@@ -328,6 +537,10 @@
                   <li>建議雙人入住</li>
                   <li>旺季建議先確認機票或船票</li>
                 </ul>
+                <div class="link-stack">
+                  <a class="text-link" href="/stays/sea-view-double-room/">查看海景雙人房指南</a>
+                  <a class="text-link" href="/compare/sea-view-vs-mountain-view-room/">比較海景房與山景房</a>
+                </div>
               </div>
             </article>
 
@@ -345,6 +558,10 @@
                   <li>適合雙人入住</li>
                   <li>館內提供 Wi-Fi</li>
                 </ul>
+                <div class="link-stack">
+                  <a class="text-link" href="/stays/mountain-view-double-room/">查看山景雙人房指南</a>
+                  <a class="text-link" href="/compare/sea-view-vs-mountain-view-room/">比較海景房與山景房</a>
+                </div>
               </div>
             </article>
 
@@ -362,6 +579,10 @@
                   <li>適合 4 人入住</li>
                   <li>連假與旺季建議提早預約</li>
                 </ul>
+                <div class="link-stack">
+                  <a class="text-link" href="/stays/family-room/">查看四人房指南</a>
+                  <a class="text-link" href="/booking.html">查看訂房方式</a>
+                </div>
               </div>
             </article>
 
@@ -379,7 +600,30 @@
                   <li>詳情請電話確認床位狀況</li>
                   <li>適合機動型旅程安排</li>
                 </ul>
+                <div class="link-stack">
+                  <a class="text-link" href="/stays/backpacker-room/">查看背包客房指南</a>
+                  <a class="text-link" href="/access.html">查看交通位置</a>
+                </div>
               </div>
+            </article>
+          </div>
+
+          <div class="two-column-grid">
+            <article class="detail-card" data-reveal>
+              <h3>適合入住的情況</h3>
+              <ul class="meta-list">
+                <li>想在西莒住一晚以上，把青帆港與夜間行程排進旅程。</li>
+                <li>需要雙人、家庭或背包客等不同住宿型態。</li>
+                <li>想先看房型、交通與訂房方式再聯絡館方確認。</li>
+              </ul>
+            </article>
+            <article class="detail-card" data-reveal>
+              <h3>可能不那麼適合的情況</h3>
+              <ul class="meta-list">
+                <li>只停留極短時間，不打算在西莒過夜。</li>
+                <li>需要網站即時下單或線上金流完成訂房。</li>
+                <li>需要寵物住宿安排，因館內目前不接待寵物入住。</li>
+              </ul>
             </article>
           </div>
         </section>
@@ -395,16 +639,19 @@
               <span class="tag">青帆散步</span>
               <h3>青帆港與聚落街巷</h3>
               <p>從會館步行向下，就是感受青帆村生活線條與港邊空氣最直接的方式。</p>
+              <a class="text-link" href="/travel-guides/nangan-to-xiju-transport/">查看交通與青帆港動線</a>
             </article>
             <article class="experience-card experience-card-featured" data-reveal>
               <span class="tag">季節限定</span>
               <h3>藍眼淚與夜色海岸</h3>
               <p>每年約 4 至 9 月，菜埔澳、坤坵沙灘與青帆港周邊都是西莒熱門夜景路線。</p>
+              <a class="text-link" href="/travel-guides/xiju-blue-tears-stay-guide/">查看藍眼淚住宿指南</a>
             </article>
             <article class="experience-card" data-reveal>
               <span class="tag">雙島安排</span>
               <h3>東莒、西莒慢遊</h3>
               <p>若安排跳島，可搭配東西莒交通，延伸燈塔、聚落、沙灘與戰地景觀行程。</p>
+              <a class="text-link" href="/travel-guides/xiju-two-day-itinerary/">查看兩天一夜行程安排</a>
             </article>
           </div>
         </section>
@@ -541,6 +788,41 @@
           </div>
         </section>
 
+        <section class="section">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow">FAQ</p>
+            <h2>關於西莒山海一家會館的常見問題</h2>
+            <p>以下問題以網站目前公開資訊整理，方便 AI 搜尋與旅客快速取得可直接引用的答案。</p>
+          </div>
+
+          <div class="faq-grid">
+            <article class="faq-item" data-reveal>
+              <h3>西莒山海一家會館是什麼？</h3>
+              <p>西莒山海一家會館是位於青帆村高點的民宿，提供住宿、房型資訊、訂房聯絡與西莒旅遊相關資訊。</p>
+            </article>
+            <article class="faq-item" data-reveal>
+              <h3>山海一家會館適合誰？</h3>
+              <p>適合雙人慢旅、家庭住宿、背包客跳島，以及想安排青帆港、方塊海與藍眼淚路線的旅客。</p>
+            </article>
+            <article class="faq-item" data-reveal>
+              <h3>山海一家會館有哪些房型？</h3>
+              <p>目前整理的房型包含海景雙人房、山景雙人房、山景四人房與背包客房，房況與價格請再向館方確認。</p>
+            </article>
+            <article class="faq-item" data-reveal>
+              <h3>從南竿怎麼到山海一家會館？</h3>
+              <p>一般會先到南竿福澳港，再搭交通船前往西莒青帆港，抵達後可與館方確認接送安排。</p>
+            </article>
+            <article class="faq-item" data-reveal>
+              <h3>山海一家會館怎麼訂房？</h3>
+              <p>建議先用電話或 Line 確認日期、房型與人數，再依館方提供的匯款資訊完成預約。</p>
+            </article>
+            <article class="faq-item" data-reveal>
+              <h3>入住山海一家會館可以安排哪些西莒行程？</h3>
+              <p>常見安排包含青帆港散步、菜浦澳、坤坵沙灘、方塊海與藍眼淚夜間路線，仍需依天候與季節調整。</p>
+            </article>
+          </div>
+        </section>
+
         <section class="section contact-section" id="contact">
           <div class="contact-panel" data-reveal>
             <div class="contact-copy">
@@ -587,7 +869,31 @@
       </main>
 
       <footer class="site-footer">
-        <p>山海一家會館 Mountain Sea Villa</p>
+        <div class="footer-grid">
+          <section>
+            <h2>山海一家會館</h2>
+            <p>位於馬祖西莒青帆村高點，提供房型、訂房、交通與周邊旅遊資訊。</p>
+          </section>
+          <nav class="footer-links" aria-label="主要頁面">
+            <h2>主要頁面</h2>
+            <a href="/rooms.html">房型資訊</a>
+            <a href="/booking.html">訂房方式</a>
+            <a href="/access.html">交通位置</a>
+            <a href="/xiju-travel.html">西莒旅行</a>
+            <a href="/faq.html">常見問題</a>
+            <a href="/gallery.html">山海影像</a>
+            <a href="/stays/">房型深度頁</a>
+            <a href="/travel-guides/">旅行指南</a>
+            <a href="/compare/">住宿比較</a>
+          </nav>
+          <nav class="footer-links" aria-label="聯絡方式">
+            <h2>聯絡方式</h2>
+            <a href="tel:+88683688295">訂房專線 0836-88295</a>
+            <a href="tel:+886972098380">手機 0972-098-380</a>
+            <a href="https://line.me/ti/p/~0972098380" target="_blank" rel="noreferrer">Line 洽詢</a>
+            <a href="https://share.google/b4YWjxrqz31nvUyzh" target="_blank" rel="noreferrer">Google 地圖</a>
+          </nav>
+        </div>
         <p>地址：連江縣莒光鄉青帆村 96-3 號 ・ <span id="year"></span></p>
         <p class="footer-note">
           本站照片與住宿資訊依館方公開資料整理製作；房價、交通與營運細節若有更新，請以館方最新說明為準。
@@ -598,7 +904,7 @@
         <button class="lightbox-close" type="button" aria-label="關閉照片預覽">關閉</button>
         <button class="lightbox-nav lightbox-prev" type="button" aria-label="上一張照片">‹</button>
         <figure>
-          <img id="lightboxImage" src="./assets/images/exterior.jpg" alt="" />
+          <img id="lightboxImage" src="./assets/images/exterior.jpg" alt="山海一家會館外觀預覽" />
           <figcaption id="lightboxCaption"></figcaption>
         </figure>
         <button class="lightbox-nav lightbox-next" type="button" aria-label="下一張照片">›</button>
