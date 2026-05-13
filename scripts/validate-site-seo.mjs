@@ -141,7 +141,7 @@ for (const filePath of htmlFiles) {
   const imgTags = [...html.matchAll(/<img\b[^>]*>/gi)].map((match) => match[0]);
   const linkMatches = [...html.matchAll(/<a\b[^>]*href="([^"]+)"/gi)].map((match) => match[1]);
   const isMajorPage = MAJOR_PAGES.includes(pageName);
-  const hasDefinition = /Quick Definition|Definition/.test(html);
+  const hasDefinition = /先快速了解|是什麼？/.test(html);
   const hasSummary = /這頁在說什麼|適合誰閱讀/.test(html);
   const hasFaqHeading = /FAQ|常見問題/.test(html);
 

@@ -410,7 +410,7 @@ ${renderBreadcrumbNav(crumbs)}
 
         <section class="section">
           <div class="content-band">
-            <p class="eyebrow">Definition</p>
+            <p class="eyebrow">先快速了解</p>
             <h2>${escapeHtml(entry.targetKeyword)}是什麼？</h2>
             <p>${escapeHtml(entry.introDefinition)}</p>
           </div>
@@ -481,7 +481,7 @@ ${renderBreadcrumbNav(crumbs)}
         <section class="section page-hero">
           <img src="${relativeRoot}assets/images/banner-1.jpg" alt="${escapeHtml(collection.h1)}" />
           <div class="page-hero-copy">
-            <p class="eyebrow">Collection</p>
+            <p class="eyebrow">${escapeHtml(collection.baseRoute === "stays" ? "房型整理" : collection.baseRoute === "travel-guides" ? "旅行整理" : "住宿比較")}</p>
             <h1>${escapeHtml(collection.h1)}</h1>
             <p>${escapeHtml(collection.description)}</p>
           </div>
@@ -489,7 +489,7 @@ ${renderBreadcrumbNav(crumbs)}
 
         <section class="section">
           <div class="content-band">
-            <p class="eyebrow">Quick Definition</p>
+            <p class="eyebrow">先快速了解</p>
             <h2>${escapeHtml(collection.targetKeyword)}是什麼？</h2>
             <p>${escapeHtml(collection.description)}</p>
           </div>
@@ -512,7 +512,7 @@ ${renderBreadcrumbNav(crumbs)}
             <article class="detail-card">
               <h2>${escapeHtml(entry.h1)}</h2>
               <p>${escapeHtml(entry.description)}</p>
-              ${renderMetaList([`搜尋意圖：${entry.searchIntent}`, `目標關鍵字：${entry.targetKeyword}`])}
+              ${renderMetaList([`適合：${entry.audience[0]}`, `重點：${entry.painPoints[0]}`])}
               <a class="text-link" href="${routeForEntry(entry)}">查看這頁</a>
             </article>`
               )
