@@ -142,7 +142,7 @@ for (const filePath of htmlFiles) {
   const linkMatches = [...html.matchAll(/<a\b[^>]*href="([^"]+)"/gi)].map((match) => match[1]);
   const isMajorPage = MAJOR_PAGES.includes(pageName);
   const hasDefinition = /先快速了解|是什麼？/.test(html);
-  const hasSummary = /這頁在說什麼|適合誰閱讀/.test(html);
+  const hasSummary = /先看哪些重點|適合先看|重點整理|哪些旅客|先看這裡|哪些情況/.test(html);
   const hasFaqHeading = /FAQ|常見問題/.test(html);
 
   if (!title) errors.push(`${pageName}: missing <title>`);

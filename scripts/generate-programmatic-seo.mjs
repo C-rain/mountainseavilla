@@ -104,6 +104,7 @@ const renderFooter = (site) => `
             <a href="${site.mapUrl}" target="_blank" rel="noreferrer">Google 地圖</a>
           </nav>
         </div>
+        <a class="footer-policy-link" href="/service-quality.html">服務品質與永續住宿政策</a>
         <p>地址：${escapeHtml(site.address)}</p>
       </footer>`;
 
@@ -241,17 +242,38 @@ const renderCta = (cta) => {
           </div>`;
 };
 
+const buildSummaryHeading = (entry) => {
+  if (entry.baseRoute === "stays") {
+    return {
+      left: `${entry.targetKeyword}先看哪些重點`,
+      right: `${entry.targetKeyword}適合哪些旅客`
+    };
+  }
+
+  if (entry.baseRoute === "travel-guides") {
+    return {
+      left: "這份行程指南先看哪些重點",
+      right: "哪些旅客適合先看這份行程指南"
+    };
+  }
+
+  return {
+    left: "這份比較頁重點整理",
+    right: "哪些旅客適合先看這份比較頁"
+  };
+};
+
 const renderSummaryCards = (entry) => `
           <div class="two-column-grid">
             <article class="detail-card">
-              <h2>這頁在說什麼</h2>
+              <h2>${escapeHtml(buildSummaryHeading(entry).left)}</h2>
               <ul class="meta-list">
                 <li>${escapeHtml(entry.summary.whatThisPage)}</li>
                 <li>${escapeHtml(entry.summary.problemsSolved)}</li>
               </ul>
             </article>
             <article class="detail-card">
-              <h2>適合誰閱讀</h2>
+              <h2>${escapeHtml(buildSummaryHeading(entry).right)}</h2>
               <ul class="meta-list">
                 <li>${escapeHtml(entry.summary.whoFor)}</li>
                 <li>${escapeHtml(entry.summary.nextStep)}</li>
@@ -496,11 +518,11 @@ ${renderBreadcrumbNav(crumbs)}
 
           <div class="two-column-grid">
             <article class="detail-card">
-              <h2>適合誰閱讀</h2>
+              <h2>這個整理頁適合誰先看</h2>
               ${renderMetaList(collection.audience)}
             </article>
             <article class="detail-card">
-              <h2>這個集合能解決什麼問題</h2>
+              <h2>這裡可以先解決哪些選擇問題</h2>
               ${renderMetaList(collection.painPoints)}
             </article>
           </div>
